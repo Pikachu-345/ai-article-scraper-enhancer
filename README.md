@@ -1,10 +1,10 @@
-# BeyondChats Article Enhancement System
+# Article Enhancement System
 
-A full-stack application that scrapes articles from BeyondChats blog, enhances them using AI (Groq LLM), and displays them in a beautiful responsive UI.
+A full-stack application that scrapes articles from blog articles, enhances them using AI (Groq LLM), and displays them in a beautiful responsive UI.
 
 ## 🌟 Features
 
-- **Web Scraping**: Automated scraping of articles from BeyondChats blog using Puppeteer
+- **Web Scraping**: Automated scraping of articles from blog articles using Puppeteer
 - **RESTful API**: Full CRUD operations for articles with MongoDB storage
 - **AI Enhancement**: Google search integration + competitor analysis + LLM-powered content optimization
 - **Modern UI**: React frontend with glassmorphism design, dark gradients, and smooth animations
@@ -15,7 +15,7 @@ A full-stack application that scrapes articles from BeyondChats blog, enhances t
 
 ```mermaid
 graph TB
-    A[BeyondChats Blog] -->|Puppeteer| B[Backend API]
+    A[Blog Articles] -->|Puppeteer| B[Backend API]
     B -->|MongoDB| C[(Database)]
     
     D[Enhancement Script] -->|GET| B
@@ -52,8 +52,8 @@ graph TB
 ### 1. Clone Repository
 
 ```bash
-git clone <your-repo-url>
-cd beyond_chats_assignment
+git clone https://github.com/Pikachu-345/ai-article-scraper-enhancer.git
+cd ai-article-scraper-enhancer
 ```
 
 ### 2. Backend Setup
@@ -166,6 +166,7 @@ Frontend will run on `http://localhost:5173`
 
 **Example Request**:
 ```bash
+# For Windows
 # Get all enhanced articles
 curl http://localhost:5000/api/articles?isUpdated=true
 
@@ -175,7 +176,7 @@ curl http://localhost:5000/api/articles/<article-id>
 
 ## 📊 Data Flow
 
-1. **Scraping**: Puppeteer → BeyondChats blog → Extract articles → Store in MongoDB
+1. **Scraping**: Puppeteer → Blog articles → Extract articles → Store in MongoDB
 2. **Enhancement**:
    - Fetch article from API
    - Google search for article title
@@ -190,8 +191,7 @@ curl http://localhost:5000/api/articles/<article-id>
 - **Runtime**: Node.js
 - **Framework**: Express.js
 - **Database**: MongoDB with Mongoose
-- **Scraping**: Puppeteer + Cheerio
-- **CORS**: For cross-origin requests
+- **Scraping**: Puppeteer
 
 ### Enhancement Script
 - **Automation**: Puppeteer (Google search + article scraping)
@@ -345,15 +345,11 @@ beyond_chats_assignment/
 - Verify backend is running
 - Check browser console for errors
 
-## 📝 License
-
-This project was created as an assignment for BeyondChats Full Stack Web Developer Intern position.
-
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@yourusername]
-- Email: your.email@example.com
+**Vishal**
+- GitHub: [@Pikachu-345]
+- Email: vishal2patel4@gmail.com
 
 ---
 
@@ -366,4 +362,4 @@ This project was created as an assignment for BeyondChats Full Stack Web Develop
 
 ---
 
-Made with ❤️ for BeyondChats Assignment
+Made with ❤️

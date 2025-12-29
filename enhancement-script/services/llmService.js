@@ -18,9 +18,19 @@ class LLMService {
                 messages: [
                     {
                         role: 'system',
-                        content: 'You are an expert content writer and SEO specialist. Your task is to improve articles by analyzing top-performing content and incorporating best practices while maintaining authenticity.'
-                    },
-                    {
+                        content: `You are an expert content writer and SEO specialist. 
+Your task is to improve articles by analyzing top-performing content and incorporating best practices while maintaining authenticity.
+
+CRITICAL OUTPUT FORMAT REQUIREMENT:
+You MUST output all content in clean Markdown format with:
+- Proper heading hierarchy (# for h1, ## for h2, ### for h3, etc.)
+- Bullet points (-) and numbered lists (1., 2., 3.) where appropriate
+- **Bold** and *italic* for emphasis
+- Clean paragraph separation with blank lines
+- Links in [text](url) format
+
+Preserve and enhance the content structure to make it highly readable and properly formatted.`
+                    }, {
                         role: 'user',
                         content: prompt
                     }
@@ -69,7 +79,7 @@ Content: ${competitor2.content?.substring(0, 1500) || 'N/A'}
 **YOUR TASK:**
 Rewrite the original article with the following improvements:
 
-1. **Structure & Formatting**: Adopt the formatting style of the top-ranking articles (heading hierarchy, paragraph length, use of lists)
+1. **Structure & Formatting**: Adopt the formatting style using Markdown syntax (# ## ### for headings, - for bullets, proper paragraph spacing)
 
 2. **Content Enhancement**: 
    - Maintain the original topic and core message
@@ -93,11 +103,12 @@ Rewrite the original article with the following improvements:
 - Write in a clear, engaging manner
 
 **OUTPUT FORMAT**:
-Provide only the rewritten article content. Do not include any preamble or explanation.
+Provide ONLY the rewritten article content in MARKDOWN format. No preamble or explanation.
+Use: # for title, ## for sections, ### for subsections, - for bullets, **bold** for emphasis.
 
-At the end of the article, add a "**References**" section citing the two competitor articles:
+At the end, add:
 
-**References:**
+## References
 1. [${competitor1.title}](${competitor1.url})
 2. [${competitor2.title}](${competitor2.url})
 
